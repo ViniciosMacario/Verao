@@ -1,0 +1,129 @@
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #FFEAD4;
+}
+
+/* Header */
+.container-header
+{
+  width: 100%;
+}
+.lett-header
+{
+  width: 50%;
+  margin-top: 10%;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+
+  fill: transparent;
+
+  /*o Delay do preenchimento precisa ser maior para dar tempo do tracado terminar*/
+  animation: 
+    lett-preenchimento
+    0.5s 
+    ease-in-out 
+    forwards
+    2.3s
+    ;
+}
+.lett-header path
+{
+  stroke-width: 2px;
+  stroke: #BE253F;
+  /*dasharray serve para criar linhas tracejadas*/
+  stroke-dasharray: 3000;
+
+  /*dashoffset serve para movimentar esse tracejado*/
+  stroke-dashoffset: 3000;
+
+    animation:
+      lett-tracado
+      4s 
+      ease-in-out 
+      forwards 
+      0.5s
+    ;
+}
+@keyframes lett-preenchimento{
+  to{
+    fill: #BE253F;
+  }
+}
+@keyframes lett-tracado{
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/*Cards*/
+.container-cards {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+}
+.section-dicas h1,
+.container-cards h2{
+  font-family: 'Pacifico', cursive;
+  color: #BE253F;
+  text-align: center;
+}
+
+.section-dicas h1{
+  font-size: 3em;
+}
+.section-dicas h2{
+  font-size: 1.5em;
+}
+.card{
+  width: 50%;
+  padding: 20px;
+
+  border-radius: 10px;
+  background-color: #fff;
+}
+.container-cards article p{
+  color: #484848;
+  font-size: 1em;
+  font-family: 'Lato', sans-serif;
+}
+
+
+/*Footer*/
+
+.container-footer{
+
+  position: relative;
+  /* background-color: black; */
+}
+.lett-footer
+{
+  position: absolute;
+  left: 20%;
+  margin-top: 25%;
+
+  width: 60%;
+  /*Ele não vou ao centro devido que a propriedade margin 0 auto só fuciona se o elemento for um dispay block
+  
+  Os Svg por padrão são do tipo Display inline
+  */
+
+  /*Quando usamos o position absolute, algumas propriedades deixam de ter efeitos como desejamos, como por exemplo o margin 0 auto e o display block*/
+  /*display: block;*/
+  /* margin: 0 auto; */
+
+  fill: #fff;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.container-footer img
+{
+  transform: translate(0px, 10px);
+  margin-top: 100px;
+}
